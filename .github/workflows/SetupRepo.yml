@@ -11,5 +11,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run script to build repo
         run: |
-          chmod +x ~/SetupRepo
-          sh ~/SetupRepo
+          cd $GITHUB_WORKSPACE
+          ls -a
+          chmod +x SetupRepo
+          sh SetupRepo
