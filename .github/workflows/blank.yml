@@ -1,0 +1,15 @@
+name: Setup Repo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run script to build repo
+        run: |
+          chmod +x ~/SetupRepo
+          sh ~/SetupRepo
