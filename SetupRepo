@@ -1,0 +1,17 @@
+#!/bin/bash
+sudo apt update -y
+sudo apt upgrade -y
+cd $HOME
+mkdir -p /repo/apt
+export REPO=$HOME/repo/apt
+cd $REPO
+wget https://archive.org/download/termux-repositories-legacy/termux-repositories-legacy-24.12.2019.tar
+tar -xf termux-repositories-legacy-24.12.2019.tar
+mv termux-repositories-legacy/webroot/* $REPO/
+#termux-repositories-legacy/webroot/termux-packages/dists/stable/main/
+cd $HOME/repo
+git init
+git add -A
+git commit -m 'Update'
+git remote add origin git@github.com:raj-extremegamerz/termux-unofficial-21
+git push -u -f origin main
