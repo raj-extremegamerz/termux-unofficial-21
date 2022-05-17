@@ -7,7 +7,10 @@ export REPO=$HOME/repo/apt
 cd $REPO
 wget https://archive.org/download/termux-repositories-legacy/termux-repositories-legacy-24.12.2019.tar
 tar -xf termux-repositories-legacy-24.12.2019.tar
-mv termux-repositories-legacy/webroot/* $REPO/
+sudo rm -rf termux-repositories-legacy/webroot/*/arm
+sudo rm -rf termux-repositories-legacy/webroot/*/i686
+sudo rm -rf termux-repositories-legacy/webroot/*/x86_64
+sudo mv termux-repositories-legacy/webroot/* $REPO/
 #termux-repositories-legacy/webroot/termux-packages/dists/stable/main/
 cd $HOME/repo
 git init
